@@ -33,7 +33,6 @@ function handleCurrentWeather(coordinates, city) {
 function displayCurrentWeather(currentCityData, cityName) {
   let weatherIcon = `http://openweathermap.org/img/wn/${currentCityData.weather[0].icon}.png`;
   document.querySelector("#currentWeather").innerHTML = `<h2>${cityName} ${moment.unix(currentCityData.dt).format("MMM Do YY")} <img src="${weatherIcon}"></h2> <div>Temp: ${currentCityData.temp} \xB0F</div> <div> Humidity: ${currentCityData.humidity} %</div> <div> Windspeed: ${currentCityData.wind_speed} MPH</div> <div> Uvi: ${currentCityData.uvi}</div>`;
-  
 }
 
 function displayFiveDayWeather(fiveDayCityData) {
@@ -55,7 +54,6 @@ function handleFormSubmit(event) {
   searchCities.forEach((city) => {
     document.querySelector("#searchHistory").innerHTML += `<button data-city="${city}" class="w-100 d-block my-2">${city}</button>`;
   });
-
   handleCoords(city);
 }
 
